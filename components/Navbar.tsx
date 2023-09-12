@@ -15,7 +15,9 @@ interface NavbarProps {
 export default function Navbar({ logo, alt, width, height, navigation }: NavbarProps) {
     return (
         <nav className='flex flex-row gap-8 bg-gray-800' aria-label='Main Navigation'>
-            <Image src={logo} alt={alt} width={width} height={height} priority />
+            <Link href='/'>
+                <Image src={logo} alt={alt} width={width} height={height} priority />
+            </Link>
             {navigation && (
                 <ul className='flex gap-16'>
                     {navigation.map(item => (

@@ -23,3 +23,7 @@ To better illustrate how routing works with the App Router, let's consider an ex
 #### [Layout](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts):
 
 The App Router introduces new file conventions for creating pages, shared layouts, and templates. Pages are unique UI components mapped to routes and defined in `page.js` files. Layouts are UI components shared between pages, preserving state and interactivity across navigation. Layouts can be nested and are also defined in special layout.js files. The top-most layout, called the Root Layout, must include HTML and body tags and is mandatory for any Next.js application. This setup replaces traditional `\_app.js` and `\_document.js` files in earlier versions of Next.js.
+
+#### [Template](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#templates):
+
+Templates serve as an intermediary layer between layouts and pages, offering a fresh component instance with each navigation. Unlike layouts, which persist and maintain state across routes, templates allow for a clean slate, re-initializing state and effects like useEffect and useState as users navigate between pages. This can be particularly useful for features that require specific behaviors upon route changes, such as logging page views or displaying per-page feedback forms. Defined in a `template.tsx` file, these templates are rendered between a layout and its children.

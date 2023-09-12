@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Counter from '@/components/Counter'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import './globals.css'
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     height={30}
                     navigation={navigation}
                 />
+                <Counter header='Layout Counter' />
                 {children}
                 <Footer companyName='React ATX' />
             </body>
