@@ -16,10 +16,10 @@ export default function Counter({ header, initialCount = 0 }: CounterProps) {
 
     return (
         <div className='text-white flex flex-row gap-4'>
-            <h2>{header}:</h2>
-            <p className='text-white' onClick={incrementCounter}>
+            <h2 data-cy='counter-header'>{header}:</h2>
+            <span className='text-white' onClick={incrementCounter} data-cy='counter-value'>
                 {counter}
-            </p>
+            </span>
         </div>
     )
 }

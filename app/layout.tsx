@@ -12,14 +12,11 @@ export const metadata: Metadata = {
     description: 'Next.js demonstration for ReactATX by David Bowman.'
 }
 
-const navigation = [
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '/blog' }
-]
+const navigation = [{ name: 'Intentional Error', href: '/intentional-error' }]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang='en' className='h-screen w-screen bg-gray-800'>
+        <html lang='en'>
             <body className={`${inter.className} flex flex-col gap-4 m-4 lg:m-8`}>
                 <Navbar
                     logo='/TailwindCSSLogo.svg'
