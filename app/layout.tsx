@@ -17,7 +17,8 @@ const navigation = [
     { name: 'Template', href: '/layout/template' },
     { name: 'Layout vs. Template', href: '/layout/template/layout-vs-template' },
     { name: 'Error', href: '/error' },
-    { name: 'Loading', href: '/loading' }
+    { name: 'Loading', href: '/loading' },
+    { name: 'Not Found', href: '/not-found' }
 ]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
