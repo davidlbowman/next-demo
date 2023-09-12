@@ -1,6 +1,6 @@
 import throwError from '@/utils/throwError'
 
-export default function IntentionalError() {
+export default function ErrorPage() {
     return (
         <section>
             <h2 className='text-white text-2xl'>Intentional Error</h2>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Counter from '@/components/Counter'
+
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import './globals.css'
@@ -12,7 +12,13 @@ export const metadata: Metadata = {
     description: 'Next.js demonstration for ReactATX by David Bowman.'
 }
 
-const navigation = [{ name: 'Intentional Error', href: '/intentional-error' }]
+const navigation = [
+    { name: 'Layout', href: '/layout' },
+    { name: 'Template', href: '/layout/template' },
+    { name: 'Layout vs. Template', href: '/layout/template/layout-vs-template' },
+    { name: 'Error', href: '/error' },
+    { name: 'Loading', href: '/loading' }
+]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -25,7 +31,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     height={30}
                     navigation={navigation}
                 />
-                <Counter header='Layout Counter' />
                 {children}
                 <Footer companyName='React ATX' />
             </body>
