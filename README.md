@@ -35,3 +35,5 @@ The loading.js and Suspense features in Next.js offer a nuanced approach to impr
 #### [Parallel Routes](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes):
 
 The concept of Parallel Routing in Next.js allows for more complex and dynamic routing scenarios, offering capabilities to simultaneously or conditionally render multiple pages in the same layout. This is particularly useful for dynamic sections of an application, like dashboards or social media feeds. Named slots are used to create parallel routes, which can be rendered alongside the main content. You can also set up custom error and loading states for each parallel route. These slots are independent and do not affect the URL structure. You can further control the rendering based on conditions like user authentication, making it flexible for real-world use-cases. The approach also supports features like modals and offers mechanisms for unmatched routes, enabling a robust and dynamic routing system.
+
+#### [Route Groups](https://nextjs.org/docs/app/building-your-application/routing/route-groups):
