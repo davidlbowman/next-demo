@@ -7,7 +7,7 @@ interface CounterProps {
     initialCount?: number
 }
 
-export default function Counter({ header, initialCount = 0 }: CounterProps) {
+export default function TestCounter({ header, initialCount = 0 }: CounterProps) {
     const [counter, setCounter] = useState(initialCount)
 
     const incrementCounter = () => {
@@ -15,11 +15,13 @@ export default function Counter({ header, initialCount = 0 }: CounterProps) {
     }
 
     return (
-        <div className='text-white flex flex-row gap-4'>
-            <h2 data-cy='counter-header'>{header}:</h2>
-            <span className='text-white' onClick={incrementCounter} data-cy='counter-value'>
-                {counter}
-            </span>
+        <div
+            key={header}
+            className='overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6 border-gray-800 border-2 select-none'
+            onClick={incrementCounter}
+        >
+            <dt className='truncate text-sm font-medium text-gray-500'>{header}</dt>
+            <dd className='mt-1 text-3xl font-semibold tracking-tight text-gray-900'>{counter}</dd>
         </div>
     )
 }

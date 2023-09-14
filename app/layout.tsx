@@ -29,7 +29,7 @@ interface ParallelRoutesProps {
 export default function RootLayout({ children, articles, press }: ParallelRoutesProps) {
     return (
         <html lang='en'>
-            <body className={`${inter.className} flex flex-col gap-4 m-4 lg:m-8`}>
+            <body className={`${inter.className} flex flex-col gap-4 my-4 lg:m-8`}>
                 <Navbar
                     logo='/TailwindCSSLogo.svg'
                     alt='Tailwind CSS Logo'
