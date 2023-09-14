@@ -1,4 +1,9 @@
-import { BookOpenIcon, ClockIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid'
+import {
+    BookOpenIcon,
+    ClockIcon,
+    ExclamationTriangleIcon,
+    ShieldExclamationIcon
+} from '@heroicons/react/20/solid'
 
 export interface Features {
     name: string
@@ -28,10 +33,17 @@ export const featureData: Features[] = [
         icon: ClockIcon
     },
     {
-        name: 'Error and Not-Found Handling',
+        name: 'Route Error Handling',
         description:
-            'The error.tsx and not-found.tsx files allow you to display custom pages for different types of errors and for routes that do not exist. This is useful for providing guidance when users encounter broken or missing content.',
-        href: '#',
+            'The error.tsx file in Next.js enables you to present a user-friendly interface with clear messages and potential redirections to other parts of your application, thereby transforming error experiences into informative and navigable moments.',
+        href: '/error',
         icon: ExclamationTriangleIcon
+    },
+    {
+        name: 'Handling 404 Errors',
+        description:
+            'The `not-found.tsx` file in Next.js is a custom 404 error page that enhances user experience. Instead of a generic error, you can offer a tailored layout and guide users back to active pages, improving navigation and retention.',
+        href: '/not-found',
+        icon: ShieldExclamationIcon
     }
 ]
