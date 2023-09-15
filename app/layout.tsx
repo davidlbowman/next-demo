@@ -37,10 +37,6 @@ export default function RootLayout({ children, articles, press }: ParallelRoutes
                     height={30}
                     navigation={navigation}
                 />
-                <div className='flex flex-row gap-8'>
-                    {articles}
-                    {press}
-                </div>
                 {children}
                 <Footer companyName='React ATX' />
             </body>

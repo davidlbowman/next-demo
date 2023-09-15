@@ -21,7 +21,7 @@ export const featureData: Features[] = [
     {
         name: 'Layouts and Templates',
         description:
-            'Layouts and templates in Next.js provide a way to wrap pages in a common structure. You can include components such as headers and footers, which will be rendered consistently across multiple pages.',
+            'Both layout.tsx and template.tsx in Next.js provide a way to wrap pages in a common structure. You can include components such as headers and footers, which will be rendered consistently across multiple pages.',
         href: '/layout',
         icon: BookOpenIcon
     },
@@ -42,7 +42,7 @@ export const featureData: Features[] = [
     {
         name: 'Handling 404 Errors',
         description:
-            'The `not-found.tsx` file in Next.js is a custom 404 error page that enhances user experience. Instead of a generic error, you can offer a tailored layout and guide users back to active pages, improving navigation and retention.',
+            'The not-found.tsx file in Next.js is a custom 404 error page that enhances user experience. Instead of a generic error, you can offer a tailored layout and guide users back to active pages, improving navigation and retention.',
         href: '/not-found',
         icon: ShieldExclamationIcon
     }

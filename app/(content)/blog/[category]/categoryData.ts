@@ -1,6 +1,7 @@
-export type Article = {
+export type ArticleSkeleton = {
     id: number
     title: string
+    slug: string
     author: string
     date: Date
     content: string
@@ -9,7 +10,7 @@ export type Article = {
 export interface CategoryData {
     id: number
     category: {
-        [key: string]: Article[]
+        [key: string]: ArticleSkeleton[]
     }
 }
 
@@ -20,6 +21,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 1,
                 title: 'The Future of Web Design',
+                slug: 'the-future-of-web-design',
                 author: 'Jane Doe',
                 date: new Date('2022-01-15'),
                 content:
@@ -28,6 +30,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 2,
                 title: 'Introduction to CSS Grid',
+                slug: 'introduction-to-css-grid',
                 author: 'John Smith',
                 date: new Date('2022-02-20'),
                 content:
@@ -36,6 +39,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 3,
                 title: 'Why JavaScript Matters',
+                slug: 'why-javascript-matters',
                 author: 'Emily Johnson',
                 date: new Date('2022-03-10'),
                 content:
@@ -46,6 +50,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 4,
                 title: 'Company Announces New Framework',
+                slug: 'company-announces-new-framework',
                 author: 'Mark Williams',
                 date: new Date('2022-04-01'),
                 content:
@@ -54,6 +59,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 5,
                 title: 'Security in Web Development',
+                slug: 'security-in-web-development',
                 author: 'Sarah Brown',
                 date: new Date('2022-05-15'),
                 content:
@@ -62,6 +68,7 @@ export const categorySeedData: CategoryData = {
             {
                 id: 6,
                 title: 'The Importance of SEO',
+                slug: 'the-importance-of-seo',
                 author: 'William Davis',
                 date: new Date('2022-06-30'),
                 content:

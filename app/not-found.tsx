@@ -1,27 +1,27 @@
 import Image from 'next/image'
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { BookOpenIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link'
+import { ChevronRightIcon, BookOpenIcon } from '@heroicons/react/20/solid'
 
 const links = [
     {
-        name: 'Documentation',
-        href: '#',
-        description: 'Learn how to integrate our tools with your app.',
+        name: 'Home',
+        href: '/',
+        description: 'Get back to the demonstration.',
         icon: BookOpenIcon
     }
 ]
 
 export default function NotFound() {
     return (
-        <section className='mx-auto w-full max-w-7xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8'>
+        <section className='mx-auto w-full px-6 pb-16 pt-10 sm:pb-24 lg:px-8 bg-white'>
             <Image
-                className='mx-auto h-10 w-auto sm:h-12'
+                className='mx-auto'
                 src='/TailwindCSSLogo.svg'
                 alt='Tailwind CSS Logo'
-                width={200}
-                height={200}
+                width={50}
+                height={50}
             />
-            <div className='mx-auto mt-20 max-w-2xl text-center sm:mt-24'>
+            <div className='mx-auto mt-8 max-w-2xl text-center sm:mt-24'>
                 <p className='text-base font-semibold leading-8 text-indigo-600'>404</p>
                 <h1 className='mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
                     This page does not exist
@@ -43,10 +43,10 @@ export default function NotFound() {
                             </div>
                             <div className='flex-auto'>
                                 <h3 className='text-sm font-semibold leading-6 text-gray-900'>
-                                    <a href={link.href}>
+                                    <Link href={link.href}>
                                         <span className='absolute inset-0' aria-hidden='true' />
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </h3>
                                 <p className='mt-2 text-sm leading-6 text-gray-600'>
                                     {link.description}
@@ -61,12 +61,6 @@ export default function NotFound() {
                         </li>
                     ))}
                 </ul>
-                <div className='mt-10 flex justify-center'>
-                    <a href='#' className='text-sm font-semibold leading-6 text-indigo-600'>
-                        <span aria-hidden='true'>&larr;</span>
-                        Back to home
-                    </a>
-                </div>
             </div>
         </section>
     )
