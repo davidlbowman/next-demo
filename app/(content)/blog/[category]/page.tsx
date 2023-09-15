@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArticleSkeleton, CategoryData, categorySeedData } from './categoryData'
+import { CategoryData, categorySeedData } from './categoryData'
 import capitalizeFirstLetter from '@/utils/capitalizeFirstLetter'
 import formatDate from '@/utils/formatDate'
 
@@ -15,15 +15,9 @@ export async function generateStaticParams() {
     const categoryData = await fetchData(categorySeedData)
     const categoryKeys = Object.keys(categoryData.category)
 
-    const params = categoryKeys.map(key => {
-        return {
-            params: {
-                category: key
-            }
-        }
-    })
-
-    return params
+    return categoryKeys.map(key => ({
+        category: key
+    }))
 }
 
 async function fetchArticles(category: string) {
