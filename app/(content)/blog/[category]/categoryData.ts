@@ -1,23 +1,25 @@
 export type ArticleSkeleton = {
     id: number
-    title: string
     slug: string
+    title: string
     author: string
     date: Date
     content: string
 }
 
-export interface CategoryData {
+export interface CategorySkeleton {
     id: number
-    category: {
-        [key: string]: ArticleSkeleton[]
-    }
+    slug: string
+    name: string
+    articles: ArticleSkeleton[]
 }
 
-export const categorySeedData: CategoryData = {
-    id: 1,
-    category: {
-        resources: [
+export const categorySeedData: CategorySkeleton[] = [
+    {
+        id: 1,
+        slug: 'resources',
+        name: 'Resources',
+        articles: [
             {
                 id: 1,
                 title: 'The Future of Web Design',
@@ -41,12 +43,17 @@ export const categorySeedData: CategoryData = {
                 title: 'Why JavaScript Matters',
                 slug: 'why-javascript-matters',
                 author: 'Emily Johnson',
-                date: new Date('2022-03-10'),
+                date: new Date('2023-03-10'),
                 content:
                     'JavaScript has become an essential part of modern web development. Its versatility allows for rich, interactive user experiences across a wide range of platforms.'
             }
-        ],
-        press: [
+        ]
+    },
+    {
+        id: 2,
+        slug: 'press',
+        name: 'Press',
+        articles: [
             {
                 id: 4,
                 title: 'Company Announces New Framework',
@@ -70,10 +77,10 @@ export const categorySeedData: CategoryData = {
                 title: 'The Importance of SEO',
                 slug: 'the-importance-of-seo',
                 author: 'William Davis',
-                date: new Date('2022-06-30'),
+                date: new Date('2021-06-30'),
                 content:
                     "Search Engine Optimization (SEO) is more important than ever in today's competitive market. Learn how to optimize your website for better visibility."
             }
         ]
     }
-}
+]

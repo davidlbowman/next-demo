@@ -1,10 +1,14 @@
 import Link from 'next/link'
-import { CategoryData, categorySeedData } from './categoryData'
+import {
+    ArticleSkeleton,
+    CategorySkeleton,
+    categorySeedData
+} from '@/app/(content)/blog/[category]/categoryData'
 import capitalizeFirstLetter from '@/utils/capitalizeFirstLetter'
 import formatDate from '@/utils/formatDate'
 
-async function fetchData(categoryData: CategoryData) {
-    return new Promise<CategoryData>(resolve => {
+async function fetchData(categoryData: CategorySkeleton[]) {
+    return new Promise<CategorySkeleton[]>(resolve => {
         setTimeout(() => {
             resolve(categoryData)
         }, 1000)
@@ -13,16 +17,16 @@ async function fetchData(categoryData: CategoryData) {
 
 export async function generateStaticParams() {
     const categoryData = await fetchData(categorySeedData)
-    const categoryKeys = Object.keys(categoryData.category)
-
-    return categoryKeys.map(key => ({
-        category: key
-    }))
+    const categorySlugs = categoryData.map(category => category.slug)
+    const params = categorySlugs.map(slug => ({ params: { category: slug } }))
+    return params
 }
 
-async function fetchArticles(category: string) {
-    const res = await categorySeedData.category[category]
-    return res
+async function fetchArticles(categorySlug: string): Promise<ArticleSkeleton[] | null> {
+    const data = await fetchData(categorySeedData)
+    const category = data.find(cat => cat.slug === categorySlug)
+    if (!category) return null
+    return category.articles
 }
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
@@ -37,7 +41,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                     </h2>
                 </div>
                 <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
-                    {articles.map(({ id, date, slug, title, content, author }) => {
+                    {articles?.map(({ id, date, slug, title, content, author }) => {
                         const formattedDate = formatDate({ date: date })
                         return (
                             <article
