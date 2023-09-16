@@ -59,7 +59,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                                         {capitalizeFirstLetter(params.category)}
                                     </Link>
                                 </div>
-                                <Link href={slug}>
+                                <Link href={`/blog/${params.category}/${slug}`}>
                                     <div className='group relative'>
                                         <h3 className='mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'>
                                             {title}

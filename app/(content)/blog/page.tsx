@@ -26,7 +26,8 @@ export default async function BlogPage() {
                         From the blog
                     </h2>
                     <p className='mt-2 text-lg leading-8 text-gray-600'>
-                        Learn how to use Next.js quickly by reading the documentation!
+                        Learn how to use Next.js quickly by reading the documentation! Try clicking
+                        on a category or article page.
                     </p>
                     <div className='mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16'>
                         {articles

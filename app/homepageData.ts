@@ -2,6 +2,7 @@ import {
     BookOpenIcon,
     ClockIcon,
     ExclamationTriangleIcon,
+    FolderIcon,
     ShieldExclamationIcon
 } from '@heroicons/react/20/solid'
 
@@ -45,5 +46,12 @@ export const featureData: Features[] = [
             'The not-found.tsx file in Next.js is a custom 404 error page that enhances user experience. Instead of a generic error, you can offer a tailored layout and guide users back to active pages, improving navigation and retention.',
         href: '/not-found',
         icon: ShieldExclamationIcon
+    },
+    {
+        name: 'Dynamic Routing',
+        description:
+            'Next.js supports dynamic routes through folder names enclosed in square brackets, like [slug]. You can statically generate these routes at build time using the generateStaticParams function. Catch-all and optional segments further extend the routing capabilities, allowing for flexible and optimized routing solutions.',
+        href: '/blog',
+        icon: FolderIcon
     }
 ]
