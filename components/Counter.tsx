@@ -7,7 +7,7 @@ interface CounterProps {
     initialCount?: number
 }
 
-export default function TestCounter({ header, initialCount = 0 }: CounterProps) {
+export default function Counter({ header, initialCount = 0 }: CounterProps) {
     const [counter, setCounter] = useState(initialCount)
 
     const incrementCounter = () => {

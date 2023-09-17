@@ -1,4 +1,5 @@
 import {
+    ArrowPathIcon,
     BookOpenIcon,
     ClockIcon,
     ExclamationTriangleIcon,
@@ -50,8 +51,15 @@ export const featureData: Features[] = [
     {
         name: 'Dynamic Routing',
         description:
-            'Next.js supports dynamic routes through folder names enclosed in square brackets, like [slug]. You can statically generate these routes at build time using the generateStaticParams function. Catch-all and optional segments further extend the routing capabilities, allowing for flexible and optimized routing solutions.',
+            'Next.js supports dynamic routes through folder names enclosed in square brackets, like [slug]. You can statically generate these routes at build time using the generateStaticParams function.',
         href: '/blog',
         icon: FolderIcon
+    },
+    {
+        name: 'Route Handling',
+        description:
+            'Route Handlers in Next.js allow you to define custom server-side logic for handling web requests, similar to how API routes work but specifically within the `app` directory.',
+        href: '/form',
+        icon: ArrowPathIcon
     }
 ]
