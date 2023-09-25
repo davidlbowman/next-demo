@@ -8,7 +8,7 @@ export interface FormData {
     email: string
 }
 
-export default function RoutePage() {
+export default function FormPage() {
     const [formData, setFormData] = useState<FormData>({
         firstName: '',
         lastName: '',
