@@ -19,7 +19,7 @@ export interface Features {
     >
 }
 
-export const featureData: Features[] = [
+export const routingData: Features[] = [
     {
         name: 'Layouts and Templates',
         description:
@@ -61,5 +61,29 @@ export const featureData: Features[] = [
             'Route Handlers in Next.js allow you to define custom server-side logic for handling web requests, similar to how API routes work but specifically within the `app` directory.',
         href: '/form',
         icon: ArrowPathIcon
+    }
+]
+
+export const fetchingData: Features[] = [
+    {
+        name: 'Server-Side Fetching',
+        description:
+            'Utilize fetch with async/await in Server Components, Route Handlers, and Server Actions for efficient data retrieval directly on the server.',
+        href: '/server-side-fetching',
+        icon: BookOpenIcon
+    },
+    {
+        name: 'Caching and Revalidation',
+        description:
+            "Leverage Next.js's automatic caching and flexible revalidation strategies to ensure your application always serves the latest data without redundant fetches.",
+        href: '/caching-and-revalidation',
+        icon: ClockIcon
+    },
+    {
+        name: 'Client-Side Fetching',
+        description:
+            'Fetch data directly on the client using Route Handlers or employ third-party libraries like SWR or React Query for enhanced data fetching and state management on the client-side.',
+        href: '/client-side-fetching',
+        icon: ExclamationTriangleIcon
     }
 ]

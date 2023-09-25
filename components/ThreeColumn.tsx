@@ -1,4 +1,4 @@
-import { Features, featureData } from '@/app/homepageData'
+import { Features } from '@/app/homepageData'
 
 interface ThreeColumnProps {
     header: string
