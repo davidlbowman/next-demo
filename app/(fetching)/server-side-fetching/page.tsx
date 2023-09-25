@@ -1,13 +1,18 @@
 import Image from 'next/image'
-import { productData, Product } from '../productData/productData'
+import { Product } from '../productData/productData'
 
-async function fetchProducts(): Promise<Product[]> {
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    return productData
+async function getProductData() {
+    const res = await fetch('http://localhost:3000/productData')
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch product data')
+    }
+
+    return res.json()
 }
 
 export default async function ServerSideRendering() {
-    const products = await fetchProducts()
+    const products: Product[] = await getProductData()
 
     return (
         <div className='bg-white'>
