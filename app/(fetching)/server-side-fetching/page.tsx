@@ -11,7 +11,7 @@ async function getProductData() {
     return res.json()
 }
 
-export default async function ServerSideRendering() {
+export default async function ServerSideFetchingPage() {
     const products: Product[] = await getProductData()
 
     return (

@@ -1,19 +1,13 @@
+'use client'
+
 import Image from 'next/image'
-import { Product } from '../productData/productData'
+import { Product } from '@/app/(fetching)/productData/productData'
 
-async function getTimeBasedRevalidationProductData() {
-    const res = await fetch('http://localhost:3000/productData', { next: { revalidate: 3600 } })
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch product data')
-    }
-
-    return res.json()
+interface ProductListProps {
+    products: Product[]
 }
 
-export default async function CachingAndRevalidationPage() {
-    const products: Product[] = await getTimeBasedRevalidationProductData()
-
+export default function ProductList({ products }: ProductListProps) {
     return (
         <div className='bg-white'>
             <div className='mx-auto max-w-7xl overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8'>
