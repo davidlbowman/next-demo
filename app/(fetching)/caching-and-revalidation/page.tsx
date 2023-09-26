@@ -1,18 +1,19 @@
 import Image from 'next/image'
-import { Product } from '../productData/productData'
+import { Product, productData } from '../productData/productData'
 
-async function getTimeBasedRevalidationProductData() {
-    const res = await fetch('http://localhost:3000/productData', { next: { revalidate: 3600 } })
+// async function getTimeBasedRevalidationProductData() {
+//     const res = await fetch('http://localhost:3000/productData', { next: { revalidate: 3600 } })
 
-    if (!res.ok) {
-        throw new Error('Failed to fetch product data')
-    }
+//     if (!res.ok) {
+//         throw new Error('Failed to fetch product data')
+//     }
 
-    return res.json()
-}
+//     return res.json()
+// }
 
 export default async function CachingAndRevalidationPage() {
-    const products: Product[] = await getTimeBasedRevalidationProductData()
+    // const products: Product[] = await getTimeBasedRevalidationProductData()
+    const products: Product[] = productData
 
     return (
         <div className='bg-white'>
