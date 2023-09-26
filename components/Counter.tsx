@@ -17,7 +17,7 @@ export default function Counter({ header, initialCount = 0 }: CounterProps) {
     return (
         <div
             key={header}
-            className='overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6 border-gray-800 border-2 select-none'
+            className='overflow-hidden rounded-lg px-4 py-5 shadow sm:p-6 border-gray-800 border-2 select-none w-80 bg-gray-200'
             onClick={incrementCounter}
         >
             <dt className='truncate text-sm font-medium text-gray-500'>{header}</dt>

@@ -4,7 +4,7 @@ import Counter from '@/components/Counter'
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <section className='flex flex-col gap-4'>
-            <section className='bg-white px-6 py-24 sm:py-32 lg:px-8 flex flex-col gap-4'>
+            <div className='bg-white px-6 py-24 sm:py-32 lg:px-8 flex flex-col gap-4'>
                 <div className='mx-auto max-w-2xl text-center flex flex-col gap-8'>
                     <h2 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
                         Layout vs. Template
@@ -23,10 +23,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         <Link href='/layout/template/'>Template</Link>
                     </div>
                 </div>
-            </section>
-            {children}
-
-            <Counter header='layout.tsx' />
+            </div>
+            <div className='flex flex-col gap-4 place-items-center'>
+                {children}
+                <Counter header='layout.tsx' />
+            </div>
         </section>
     )
 }

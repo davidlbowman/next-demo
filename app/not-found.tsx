@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronRightIcon, BookOpenIcon } from '@heroicons/react/20/solid'
 
 export default function NotFound() {
     return (
