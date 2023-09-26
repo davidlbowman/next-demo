@@ -1,10 +1,13 @@
 import {
     ArrowPathIcon,
+    ArrowsPointingInIcon,
+    ArrowsPointingOutIcon,
     BookOpenIcon,
     ClockIcon,
     ExclamationTriangleIcon,
     FolderIcon,
-    ShieldExclamationIcon
+    ShieldExclamationIcon,
+    ShoppingBagIcon
 } from '@heroicons/react/20/solid'
 
 export interface Features {
@@ -70,20 +73,20 @@ export const fetchingData: Features[] = [
         description:
             'Utilize fetch with async/await in Server Components, Route Handlers, and Server Actions for efficient data retrieval directly on the server.',
         href: '/server-side-fetching',
-        icon: BookOpenIcon
-    },
-    {
-        name: 'Caching and Revalidation',
-        description:
-            "Leverage Next.js's automatic caching and flexible revalidation strategies to ensure your application always serves the latest data without redundant fetches.",
-        href: '/caching-and-revalidation',
-        icon: ClockIcon
+        icon: ArrowsPointingInIcon
     },
     {
         name: 'Client-Side Fetching',
         description:
             'Fetch data directly on the client using Route Handlers or employ third-party libraries like SWR or React Query for enhanced data fetching and state management on the client-side.',
         href: '/client-side-fetching',
-        icon: ExclamationTriangleIcon
+        icon: ArrowsPointingOutIcon
+    },
+    {
+        name: 'Caching and Revalidation',
+        description:
+            "Leverage Next.js's automatic caching and flexible revalidation strategies to ensure your application always serves the latest data without redundant fetches.",
+        href: '/caching-and-revalidation',
+        icon: ArrowPathIcon
     }
 ]
