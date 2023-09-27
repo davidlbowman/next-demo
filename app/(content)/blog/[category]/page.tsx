@@ -79,7 +79,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                                 </Link>
                             </article>
                         )
-                    })}
+                    }) ?? <p className='text-center'>No articles found.</p>}
                 </div>
             </div>
         </div>

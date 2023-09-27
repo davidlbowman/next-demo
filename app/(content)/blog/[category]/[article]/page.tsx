@@ -31,10 +31,8 @@ async function fetchArticle(
 ): Promise<ArticleSkeleton | null> {
     const data = await fetchData(categorySeedData)
     const category = data.find(cat => cat.slug === categorySlug)
-
     if (!category) return null
     const article = category.articles.find(article => article.slug === articleSlug) || null
-
     return article
 }
 
@@ -44,18 +42,20 @@ export default async function ArticlePage({
     params: { category: string; article: string }
 }) {
     const article = await fetchArticle(params.category, params.article)
-    if (!article) return null
-    const { author, content, title } = article
 
-    return (
+    return article ? (
         <section className='bg-white px-6 py-32 lg:px-8'>
             <div className='mx-auto max-w-3xl text-base leading-7 text-gray-700'>
-                <p className='text-base font-semibold leading-7 text-indigo-600'>{author}</p>
+                <p className='text-base font-semibold leading-7 text-indigo-600'>
+                    {article.author}
+                </p>
                 <h1 className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
-                    {title}
+                    {article.title}
                 </h1>
-                <p className='mt-6 text-xl leading-8'>{content}</p>
+                <p className='mt-6 text-xl leading-8'>{article.content}</p>
             </div>
         </section>
+    ) : (
+        <p> Article not found </p>
     )
 }
