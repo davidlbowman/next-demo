@@ -1,9 +1,8 @@
 import throwError from '@/utils/throwError'
-import { useState } from 'react'
 
 export default function ErrorPage() {
     // @ts-ignore
-    // Math.random() > 0.5 && throwError()
+    Math.random() > 0.5 && throwError()
 
     return (
         <section className='bg-white px-6 py-32 lg:px-8 flex flex-col gap-4'>
