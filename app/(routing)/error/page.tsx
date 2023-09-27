@@ -1,8 +1,8 @@
-import throwError from '@/utils/throwError'
-
 export default function ErrorPage() {
     // @ts-ignore
-    Math.random() > 0.5 && throwError()
+    // if (Math.random() > 0.5) {
+    //     throw new Error('This is an intentional error for testing purposes.')
+    // }
 
     return (
         <section className='bg-white px-6 py-32 lg:px-8 flex flex-col gap-4'>
