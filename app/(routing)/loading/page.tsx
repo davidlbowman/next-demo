@@ -4,7 +4,7 @@ import delay from '@/utils/delay'
 export default async function LoadingPage() {
     const imageString = await delay({
         resource: '/loadedBlueOwl.webp',
-        miliseconds: 2000
+        milliseconds: 2500
     })
 
     return (
